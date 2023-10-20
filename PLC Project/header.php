@@ -1,35 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Basic Header</title>
-    <style>
-        /* Header styles */
-        .header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+<style>
+    /* Styles for the header */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #212121;
+        color: #ffffff;
+        padding: 10px;
+    }
 
-        /* Logo styles */
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <a class="logo" href="#">My Website</a>
-    </header>
+    .welcome {
+        font-size: 20px;
+        flex: 1; /* Take up available space and center the text */
+        text-align: center; /* Center the text horizontally */
+    }
 
-    <!-- Main Content -->
-    <div class="content">
-        <h1>Welcome to My Website</h1>
-        <p>This is the main content area of the page.</p>
-    </div>
-</body>
-</html>
+
+    .logout a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+</style>
+
+s
+
+<!-- Logout Button -->
+<div class="header">
+    <div class="welcome">Welcome</div>
+    <div class="logout"><a href="logout.php">Logout</a></div>
+</div>
+
