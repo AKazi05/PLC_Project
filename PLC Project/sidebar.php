@@ -1,38 +1,8 @@
+<link rel="stylesheet" type="text/css" href="styles.css">
+
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        /* Sidebar styles */
-        .sidebar {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #333;
-            padding-top: 20px;
-        }
-
-        /* Sidebar links */
-        .sidebar a {
-            padding: 15px;
-            text-decoration: none;
-            font-size: 20px;
-            color: white;
-            display: block;
-        }
-
-        /* Change link color on hover */
-        .sidebar a:hover {
-            background-color: #444;
-        }
-
-        /* Main content styles (to shift it away from the sidebar) */
-        .content {
-            margin-left: 260px;
-            padding: 20px;
-        }
-    </style>
 </head>
 <body>
     <!-- Sidebar -->
