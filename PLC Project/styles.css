@@ -56,7 +56,6 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -110,4 +109,5 @@
             font-size: 14px; /* Adjust font size as needed */
             margin-top: 10px; /* Add some space above the error message */
         }
+
 
