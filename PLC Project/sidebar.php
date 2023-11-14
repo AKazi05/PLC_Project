@@ -7,10 +7,9 @@
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="home.php">Home</a>
+        <a href="workout.php">My Workout</a>
+        <a href="logout.php">Logout</a>
     </div>
 
 </body>
