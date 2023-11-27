@@ -74,7 +74,7 @@
 
         <form method="post" action="add_workout.php">
             <li><strong>3. Reverse Pec Dec</strong> Sit facing the machine, adjust the pad to chest height, and adjust the handles so you can reach them. Bring your arms back, squeezing the shoulder blades together, then return slowly.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Reverse Pec Dec">Add to Workout</button>
             </li>
         </form>
         //YouTube Video
