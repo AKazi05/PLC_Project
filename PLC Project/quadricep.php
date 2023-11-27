@@ -56,24 +56,24 @@
     //Workouts
 
         <form method="post" action="add_workout.php">
-            <li><strong>1. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-            &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>1. Barbell Back Squats</strong> Position a barbell on your upper traps, step under it, and lift the bar off of the rack. Stand with feet shoulder-width apart, and squat down by bending your knees and hips, keeping your back straight and rigid, and descend until your thighs are parallel to the ground or lower. Push through your heels to return to a standing position.
+            &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Barbell Back Squats">Add to Workout</button>
             </li>
         </form>
 
         <iframe width="480" height="270" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>2. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-            &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>2. Barbell Front Squats</strong> Hold a barbell in front of your shoulders, either crossing your arms to secure it or using an Olympic clean grip. Stand with feet shoulder-width apart, squat down by bending your knees and hips while keeping your chest up and core engaged, descend until your thighs are parallel to the ground or lower. Push through your heels to return to a standing position.
+            &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Barbell Front Squats">Add to Workout</button>
             </li>
         </form>
 
         <iframe width="480" height="270" src="https://www.youtube.com/embed/zC3nLlEvin4" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>3. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-            &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>3. Leg Press</strong> Sit on the machine with your back against the pad and set up the safeties. Place your feet shoulder-width apart on the platform, unrack the safeties, and push the weight up by straightening your legs without locking your knees. Slowly lower the weight back down, keeping control throughout the movement to work your quads.
+            &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Leg Press">Add to Workout</button>
             </li>
         </form>
         //YouTube Video
