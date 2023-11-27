@@ -57,28 +57,28 @@
         //Workouts
 
         <form method="post" action="add_workout.php">
-            <li><strong>1. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>1. Dumbbell Shrugs</strong>  Stand with feet shoulder-width apart, hold dumbbells at your sides, lift your shoulders straight up toward your ears, squeeze, then slowly lower them back down.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Dumbbell Shrugs">Add to Workout</button>
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=_t3lrPI6Ns4" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>2. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>2. Rack Pulls</strong> Set up a barbell on a power rack with pins at about knee height. Stand with feet shoulder-width apart, grip the bar, and lift by straightening your back and extending your hips, as well as pulling the shoulders back as you complete the movement. Let the weight stretch your upper traps at the top and slowly lower back down.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Rack Pulls">Add to Workout</button>
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/zC3nLlEvin4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=u7NE34Vw81w" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>3. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>3. Farmers Walk</strong>  Grab dumbbells in each hand, keep your back straight, chest up, and shoulders back, and walk forward, maintaining an upright posture and engaging your core and grip strength.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Farmers Walk">Add to Workout</button>
             </li>
         </form>
         //YouTube Video
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/fIWP-FRFNU0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=p5MNNosenJc" frameborder="0" allowfullscreen></iframe>
     </ul>
 </body>
 
