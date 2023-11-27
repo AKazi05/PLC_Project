@@ -57,28 +57,28 @@
         //Workouts
 
         <form method="post" action="add_workout.php">
-            <li><strong>1. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>1. Cable Face Pulls</strong> Attach a rope to a pulley, pull it towards your face, keeping elbows high and out, then slowly return. Repeat.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Cable Face Pulls">Add to Workout</button>
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=-MODnZdnmAQ" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>2. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>2. Standing Rear Delt Raise / Bent Lateral Raise</strong> While standing and with dumbbells in hand, bend at the waist till your torso is aobut parallel to the ground, and with your arms straight, raise the dumbbells out to sides.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Standing Rear Delt Raise">Add to Workout</button>
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/zC3nLlEvin4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=34gVHrkaiz0" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>3. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
+            <li><strong>3. Reverse Pec Dec</strong> Sit facing the machine, adjust the pad to chest height, and adjust the handles so you can reach them. Bring your arms back, squeezing the shoulder blades together, then return slowly.
                 &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
             </li>
         </form>
         //YouTube Video
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/fIWP-FRFNU0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=5YK4bgzXDp0" frameborder="0" allowfullscreen></iframe>
     </ul>
 </body>
 
