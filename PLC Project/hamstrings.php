@@ -57,24 +57,24 @@
         //Workouts
 
         <form method="post" action="add_workout.php">
-            <li><strong>1. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>1. Romanian Deadlifts / Stiff Legged Deadlifts</strong> Hold a barbell, hinge at the hips while keeping legs mostly straight, lower the bar down your legs, and then return to standing by squeezing your glutes and hamstrings. This movement can be done with the barbell "floating" in the air, or you can pause at the floor with each rep.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Romanian Deadlifts / Stiff Legged Deadlifts">Add to Workout</button>
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=CN_7cz3P-1U" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>2. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>2. Good Mornings</strong> With a barbell on your upper traps, hinge at hips, lean forward while keeping your back straight, then return to back to the standing position by squeezing your glutes and hamstrings.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Good Mornings">Add to Workout</button>
             </li>
         </form>
 
         <iframe width="480" height="270" src="https://www.youtube.com/embed/zC3nLlEvin4" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
-            <li><strong>3. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
-                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
+            <li><strong>3. Seated Leg Curl</strong> Sit on the machine, adjust the pad to fit your thighs. Curl your legs by bending your knees, while squeezing your hamstrings, then slowly return to the starting position.
+                &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Seated Leg Curl">Add to Workout</button>
             </li>
         </form>
         //YouTube Video
