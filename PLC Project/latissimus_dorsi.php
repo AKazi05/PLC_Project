@@ -62,7 +62,7 @@
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=iWpoegdfgtc" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
             <li><strong>2. Pulldowns</strong> Sit at the pulldown machine and adjust the thigh pad so that your thighs are comfortably secured under the pads. Grasp the bar your preferred grip, and pull it down towards your chest while keeping your back straight, then slowly return the bar to the starting position.
@@ -70,7 +70,7 @@
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/zC3nLlEvin4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=EUIri47Epcg" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
             <li><strong>3. Dumbbell Pullovers</strong> Lie on a bench, hold a dumbbell above your chest with both hands, then lower it backward over your head in a controlled arc until your upper arms are in line with your torso or slightly below. Then, bring the dumbbell back up over your chest to the starting position while keeping a slight bend in your elbows.
@@ -78,7 +78,7 @@
             </li>
         </form>
         //YouTube Video
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/fIWP-FRFNU0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=jQjWlIwG4sI" frameborder="0" allowfullscreen></iframe>
     </ul>
 </body>
 

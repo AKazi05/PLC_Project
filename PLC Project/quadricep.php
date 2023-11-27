@@ -61,7 +61,7 @@
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=i7J5h7BJ07g" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
             <li><strong>2. Barbell Front Squats</strong> Hold a barbell in front of your shoulders, either crossing your arms to secure it or using an Olympic clean grip. Stand with feet shoulder-width apart, squat down by bending your knees and hips while keeping your chest up and core engaged, descend until your thighs are parallel to the ground or lower. Push through your heels to return to a standing position.
@@ -69,7 +69,7 @@
             </li>
         </form>
 
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/zC3nLlEvin4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=HHxNbhP16UE" frameborder="0" allowfullscreen></iframe>
 
         <form method="post" action="add_workout.php">
             <li><strong>3. Leg Press</strong> Sit on the machine with your back against the pad and set up the safeties. Place your feet shoulder-width apart on the platform, unrack the safeties, and push the weight up by straightening your legs without locking your knees. Slowly lower the weight back down, keeping control throughout the movement to work your quads.
@@ -77,7 +77,7 @@
             </li>
         </form>
         //YouTube Video
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/fIWP-FRFNU0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="480" height="270" src="https://www.youtube.com/watch?v=yZmx_Ac3880" frameborder="0" allowfullscreen></iframe>
     </ul>
 </body>
 
