@@ -1,12 +1,14 @@
+from functools import wraps
 from os import path
 import os
-from flask import Flask, flash, redirect, render_template, request
+from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,6 +27,15 @@ def create_app():
     return app
 
 app = create_app()
+
+def login_is_required(func):
+    @wraps(func)
+    def function(*args, **kwargs):
+        if 'logged_in' not in session:
+            return redirect(url_for('log_in'))
+        else:
+            return func(*args, **kwargs)
+    return function
 
 @app.route('/signup', methods=['GET', 'POST'])
 def sign_up():
@@ -69,7 +80,8 @@ def log_in():
             try:
                 if user:
                     if check_password_hash(user.password, password):
-                        flash('Signed in! Redirecting...', category='success')
+                        # flash('Signed in! Redirecting...', category='success')
+                        session['logged_in'] = True
                         return redirect("/main")
                     else:
                         flash('Incorrect password. Hint: passwords are greater than 5 characters.', category='error')
@@ -82,7 +94,13 @@ def log_in():
             
     return render_template('login.html')
 
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect('/')
+
 @app.route('/main')
+@login_is_required
 def index():
     return render_template('main.html')
 
