@@ -1,14 +1,11 @@
 from functools import wraps
-from os import path
-import os
-from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
+from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
-
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
