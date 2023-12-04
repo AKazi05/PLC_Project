@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicep Workouts</title>
+    <title>Tricep Workouts</title>
     <link rel="stylesheet" href="muscle_styles.css">
 </head>
 <style>
@@ -48,34 +48,36 @@
     }
 </style>
 <body>
-    <a id="backButton" href="index.php">&lt; Back</a>
+    <a id="backButton" href="../PLC Project/index.php">&lt; Back</a>
 
-    <h1>Bicep Workouts</h1>
+    <h1>Front-Delts Workouts</h1>
 
     <ul>
+     
+
         <form method="post" action="add_workout.php">
-            <li><strong>1. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
+            <li><strong>1. Front Dumbbell Raises:</strong> For front dumbbell raises, stand with a dumbbell in each hand, palms facing your body, lift the weights forward with straight arms, stopping when they reach shoulder height, and then lower them back down in a controlled manner.
             &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
             </li>
         </form>
-
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/ykJmrZ5v0Oo" frameborder="0" allowfullscreen></iframe>
-
+         
+        <iframe width="480" height="270" src=" https://www.youtube.com/embed/gzDawZwDC6Y" frameborder="0" allowfullscreen></iframe>
+             
         <form method="post" action="add_workout.php">
-            <li><strong>2. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
+            <li><strong>2. Military Press:</strong> To execute a military press, start by sitting or standing with a barbell at shoulder height, grip the bar with hands slightly wider than shoulder-width apart, press the bar overhead by extending your arms, and then lower it back down to shoulder height.
             &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
             </li>
         </form>
-
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/zC3nLlEvin4" frameborder="0" allowfullscreen></iframe>
-
+         
+        <iframe width="480" height="270" src=" https://www.youtube.com/embed/waeCyaAQRn8" frameborder="0" allowfullscreen></iframe>
+             
         <form method="post" action="add_workout.php">
-            <li><strong>3. Preacher Curls:</strong> Use a preacher bench to isolate the biceps. Curl the weight up with your arms resting on the bench.
+            <li><strong>3. Front Plate Raises:</strong> For front plate raises, stand with a weight plate in front of you, grasp it with both hands, keep your arms extended, and lift the plate straight in front of you to shoulder height using your shoulder muscles, then lower it back down in a controlled motion.
             &nbsp&nbsp&nbsp&nbsp<button type="submit" name="exercise" value="Preacher Curls">Add to Workout</button>
             </li>
         </form>
-
-        <iframe width="480" height="270" src="https://www.youtube.com/embed/fIWP-FRFNU0" frameborder="0" allowfullscreen></iframe>
+         
+        <iframe width="480" height="270" src=" https://www.youtube.com/embed/hFo-LIkCozU" frameborder="0" allowfullscreen></iframe>
     </ul>
 </body>
 
