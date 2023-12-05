@@ -7,9 +7,9 @@
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="home.php">Home</a>
-        <a href="workout.php">My Workout</a>
-        <a href="logout.php">Logout</a>
+        <a href="home. html">Home</a>
+        <a href="workout. html">My Workout</a>
+        <a href="logout. html">Logout</a>
     </div>
 
 </body>
