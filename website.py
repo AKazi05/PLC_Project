@@ -60,7 +60,7 @@ def log_in():
                     if check_password_hash(user.password, password):
                         # flash('Signed in! Redirecting...', category='success')
                         session['logged_in'] = True
-                        return redirect("/main")
+                        return redirect("/home")
                     else:
                         flash('Incorrect password. Hint: passwords are greater than 5 characters.', category='error')
                         return render_template('login.html')
@@ -77,7 +77,7 @@ def logout():
     session.clear()
     return redirect('/')
 
-@website.route('/main')
+@website.route('/home')
 @login_is_required
 def index():
-    return render_template('main.html')
+    return render_template('index.html')
