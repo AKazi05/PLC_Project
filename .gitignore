@@ -1,3 +1,4 @@
 /instance
 /myenv
 /__pycache__
+.DS_Store
