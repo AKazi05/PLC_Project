@@ -81,3 +81,8 @@ def logout():
 @login_is_required
 def index():
     return render_template('index.html')
+
+@website.route('/bicep')
+@login_is_required
+def bicep():
+    return render_template('bicep.html')
