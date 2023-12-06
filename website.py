@@ -86,3 +86,103 @@ def index():
 @login_is_required
 def bicep():
     return render_template('bicep.html')
+
+@website.route('/forearm')
+@login_is_required
+def forearm():
+    return render_template('forearm.html')
+
+@website.route('/front_deltoid')
+@login_is_required
+def front_deltoid():
+    return render_template('front_deltoid.html')
+
+@website.route('/pectoral')
+@login_is_required
+def pectoral():
+    return render_template('pectoral.html')
+
+@website.route('/abdominal')
+@login_is_required
+def abdominal():
+    return render_template('abdominal.html')
+
+@website.route('/quadricep')
+@login_is_required
+def quadricep():
+    return render_template('quadricep.html')
+
+@website.route('/tibialis_anterior')
+@login_is_required
+def tibialis_anterior():
+    return render_template('tibialis_anterior.html')
+
+@website.route('/tibialis_posterior')
+@login_is_required
+def tibialis_posterior():
+    return render_template('tibialis_posterior.html')
+
+@website.route('/hip_flexor')
+@login_is_required
+def hip_flexor():
+    return render_template('hip_flexor.html')
+
+@website.route('/upper_trapezius')
+@login_is_required
+def upper_trapezius():
+    return render_template('upper_trapezius.html')
+
+@website.route('/lower_trapezius')
+@login_is_required
+def lower_trapezius():
+    return render_template('lower_trapezius.html')
+
+@website.route('/latissimus_dorsi')
+@login_is_required
+def latissimus_dorsi():
+    return render_template('latissimus_dorsi.html')
+
+@website.route('/tricep')
+@login_is_required
+def tricep():
+    return render_template('tricep.html')
+
+@website.route('/gluteus_maximus')
+@login_is_required
+def gluteus_maximus():
+    return render_template('gluteus_maximus.html')
+
+@website.route('/calf')
+@login_is_required
+def calf():
+    return render_template('calf.html')
+
+@website.route('/hamstrings')
+@login_is_required
+def hamstrings():
+    return render_template('hamstrings.html')
+
+@website.route('/mid_trapezius')
+@login_is_required
+def mid_trapezius():
+    return render_template('mid_trapezius.html')
+
+@website.route('/rear_deltoid')
+@login_is_required
+def rear_deltoid():
+    return render_template('rear_deltoid.html')
+
+@website.route('/infra_spinatus')
+@login_is_required
+def infra_spinatus():
+    return render_template('infra_spinatus.html')
+
+@website.route('/terres_major')
+@login_is_required
+def terres_major():
+    return render_template('terres_major.html')
+
+@website.route('/oblique')
+@login_is_required
+def oblique():
+    return render_template('oblique.html')
