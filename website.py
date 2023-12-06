@@ -58,9 +58,10 @@ def log_in():
             try:
                 if user:
                     if check_password_hash(user.password, password):
-                        # flash('Signed in! Redirecting...', category='success')
                         session['logged_in'] = True
-                        return redirect("/home")
+                        session['username'] = username
+                        session['password'] = password
+                        return redirect(url_for('website.index'))
                     else:
                         flash('Incorrect password. Hint: passwords are greater than 5 characters.', category='error')
                         return render_template('login.html')
@@ -82,10 +83,18 @@ def logout():
 def index():
     return render_template('index.html')
 
-@website.route('/bicep')
+@website.route('/bicep', methods=['GET', 'POST'])
 @login_is_required
 def bicep():
-    return render_template('bicep.html')
+    if request.method == 'POST': # will post when user add workout
+        workout_log = add_workout(request.form)
+        
+        if workout_log == None:
+            return redirect(url_for("website.index"))
+        else:
+            return workout_log
+    else:
+        return render_template('bicep.html')
 
 @website.route('/forearm')
 @login_is_required
@@ -186,3 +195,34 @@ def terres_major():
 @login_is_required
 def oblique():
     return render_template('oblique.html')
+
+def add_workout(form):
+    exercise = form.get('exercise')
+    user = User.query.filter_by(username=session["username"]).first()
+    try:
+        new_workout = Workout(exercise=exercise, username=user.username)
+        db.session.add(new_workout)
+        db.session.commit()
+    except Exception as e:
+        print(f"Error: {e}")
+        flash('Error adding to workout log.',category='error')
+    return redirect(url_for("website.workout"))
+ 
+@website.route('/workout', methods=['GET', 'POST'])
+@login_is_required       
+def workout():
+    user = User.query.filter_by(username=session["username"]).first()
+    workout = Workout.query.filter_by(username=user.username).all()
+    if request.method == 'POST': # will post when user presses delete
+        workout_id = request.form.get('workout_id')
+        workout_id_to_delete = Workout.query.get(workout_id)
+        try:
+            db.session.delete(workout_id_to_delete)
+            db.session.commit()
+            flash("Workout deleted successfully.", category='success')
+            return redirect(url_for('website.workout'))
+        except Exception as e:
+            db.session.rollback() # go back to previous state of DB as failsafe
+            flash("Error deleting workout.", category='error')
+        return redirect(url_for('website.workout'))
+    return render_template('workout.html', user=user, workouts=workout)
