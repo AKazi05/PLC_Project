@@ -4,11 +4,49 @@
 <html>
 <head>
     <title>Anatomical Fitness</title>
+    <style>
+      body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 125vh;
+          margin: 0;
+      }
+
+      .maparea {
+          max-width: 100%;
+          height: auto;
+      }
+    </style>
 </head>
 <body>
 <img src="../static/body_outline.jpg" alt="" usemap="#image-map" class="maparea"/>
 
- 
+<nav>
+  <div class="container-a" id="container-a">
+      <div>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+              {% for category, message in messages %}
+                  {% if category == 'error' %}
+                      <div class="alert alert-danger alter-dismissable fade show" role=alert>
+                          {{ message }}
+                          <button type="button" class="close" data-dismiss="alert">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                  {% else %}
+                      <div class="alert alert-success alter-dismissable fade show" role=alert>
+                          {{ message }}
+                          <button type="button" class="close" data-dismiss="alert">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+          {% endwith %}
+          </div>
+</nav>
+
 <map name="image-map" id="image-map"> 
     <area id = "bicep" target="" alt="" title="Bicep" href=" {{ url_for('website.bicep') }} " coords="28,178,22,184,19,189,15,196,12,204,9,211,8,219,7,226,5,233,5,238,4,247,5,254,6,260,7,266,10,271,7,266,13,273,19,277,27,278,33,274,39,263,40,257,43,246,42,235,41,227" shape="poly">
     <area id = "forearm" target="" alt="" title="Forearm" href=" {{ url_for('website.forearm') }} " coords="19,281,12,285,9,291,5,299,5,306,4,314,4,321,5,342,16,389,20,393,26,392,29,386,33,359,36,339,37,310,34,290,29,283" shape="poly">

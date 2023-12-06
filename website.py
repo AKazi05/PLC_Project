@@ -90,6 +90,7 @@ def bicep():
         workout_log = add_workout(request.form)
         
         if workout_log == None:
+            flash("Error adding workout.", category='error')
             return redirect(url_for("website.index"))
         else:
             return workout_log
