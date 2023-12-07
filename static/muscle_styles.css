@@ -1,11 +1,13 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
 body {
-    font-family: Arial, sans-serif;
     margin: 20px;
     text-align: center;
 }
 
 h1 {
-    color: #336699;
+    color: #007bff;
 }
 
 li {
