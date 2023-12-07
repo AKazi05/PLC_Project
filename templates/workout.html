@@ -43,7 +43,6 @@
 
     <h2>{{ user.username }}'s Workouts</h2>
     
-    {% if workouts %}
         <ul>
             {% for workout in workouts %}
             <li class="itinerary-item">
@@ -57,9 +56,6 @@
             <li>
             {% endfor %}
         </ul>
-    {% else %}
-        <p>No workouts available</p>
-    {% endif %}
     <div class="back-button-container">
         <a href=" {{ url_for('website.index') }} "><button class='back-button'>Back</button></a>
     </div>
