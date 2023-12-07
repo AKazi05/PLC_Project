@@ -16,7 +16,7 @@ def login_is_required(func):
     return function
 
 @website.route('/signup', methods=['GET', 'POST'])
-def sign_up():
+def signup():
     if request.method == 'POST': # if user presses signup
         form = request.form
         if 'username' in form:
