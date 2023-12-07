@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    color: black;
+    padding-top: 20px;
+}
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    transition: background-color 0.35s, opacity 0.35s;
+
+}
+.sidebar a:hover {
+    opacity: 0.8;
+    background-color: #007bff;
+}

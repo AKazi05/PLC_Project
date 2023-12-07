@@ -4,20 +4,8 @@
 <html>
 <head>
     <title>Anatomical Fitness</title>
-    <style>
-      body {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 125vh;
-          margin: 0;
-      }
-
-      .maparea {
-          max-width: 100%;
-          height: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="../static/sidebar.css">
 </head>
 <body>
 <img src="../static/body_outline.jpg" alt="" usemap="#image-map" class="maparea"/>
@@ -46,6 +34,12 @@
           {% endwith %}
           </div>
 </nav>
+
+<div class="sidebar">
+  <a href=" {{ url_for('website.index') }} ">Home</a>
+  <a href=" {{ url_for('website.workout') }} ">My Workouts</a>
+  <a href=" {{ url_for('website.logout') }} ">Logout</a>
+</div>
 
 <map name="image-map" id="image-map"> 
     <area id = "bicep" target="" alt="" title="Bicep" href=" {{ url_for('website.bicep') }} " coords="28,178,22,184,19,189,15,196,12,204,9,211,8,219,7,226,5,233,5,238,4,247,5,254,6,260,7,266,10,271,7,266,13,273,19,277,27,278,33,274,39,263,40,257,43,246,42,235,41,227" shape="poly">
