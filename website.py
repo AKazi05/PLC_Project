@@ -89,10 +89,9 @@ def add_workout(form):
         new_workout = Workout(exercise=exercise, username=user.username) # create new workout table for each instance
         db.session.add(new_workout)
         db.session.commit() # save
+        flash("Added workout!", category='success')
     except Exception as e:
-        print(f"Error: {e}")
-        flash('Error adding to workout log.',category='error')
-    return redirect(url_for("website.workout"))
+        flash("Error adding workout.", category='error')
  
 @website.route('/workout', methods=['GET', 'POST'])
 @login_is_required       
@@ -123,292 +122,208 @@ def workout():
 @login_is_required
 def bicep():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('bicep.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('bicep.html')
 
 @website.route('/forearm', methods=['GET', 'POST'])
 @login_is_required
 def forearm():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('forearm.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('forearm.html')
 
 @website.route('/front_deltoid', methods=['GET', 'POST'])
 @login_is_required
 def front_deltoid():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('front_deltoid.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('front_deltoid.html')
 
 @website.route('/pectoral', methods=['GET', 'POST'])
 @login_is_required
 def pectoral():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('pectoral.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('pectoral.html')
 
 @website.route('/abdominal', methods=['GET', 'POST'])
 @login_is_required
 def abdominal():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('abdominal.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('abdominal.html')
 
 @website.route('/quadricep', methods=['GET', 'POST'])
 @login_is_required
 def quadricep():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('quadricep.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('quadricep.html')
 
 @website.route('/tibialis_anterior', methods=['GET', 'POST'])
 @login_is_required
 def tibialis_anterior():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('tibialis_anterior.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('tibialis_anterior.html')
 
 @website.route('/tibialis_posterior', methods=['GET', 'POST'])
 @login_is_required
 def tibialis_posterior():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('tibialis_posterior.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('tibialis_posterior.html')
 
 @website.route('/hip_flexor', methods=['GET', 'POST'])
 @login_is_required
 def hip_flexor():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('hip_flexor.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('hip_flexor.html')
 
 @website.route('/upper_trapezius', methods=['GET', 'POST'])
 @login_is_required
 def upper_trapezius():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('upper_trapezius.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('upper_trapezius.html')
 
 @website.route('/lower_trapezius', methods=['GET', 'POST'])
 @login_is_required
 def lower_trapezius():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('lower_trapezius.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('lower_trapezius.html')
 
 @website.route('/latissimus_dorsi', methods=['GET', 'POST'])
 @login_is_required
 def latissimus_dorsi():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('latissimus_dorsi.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('latissimus_dorsi.html')
 
 @website.route('/tricep', methods=['GET', 'POST'])
 @login_is_required
 def tricep():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('tricep.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('tricep.html')
 
 @website.route('/gluteus_maximus', methods=['GET', 'POST'])
 @login_is_required
 def gluteus_maximus():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('gluteus_maximus.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('gluteus_maximus.html')
 
 @website.route('/calf', methods=['GET', 'POST'])
 @login_is_required
 def calf():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('calf.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('calf.html')
 
 @website.route('/hamstrings', methods=['GET', 'POST'])
 @login_is_required
 def hamstrings():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('hamstrings.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('hamstrings.html')
 
 @website.route('/mid_trapezius', methods=['GET', 'POST'])
 @login_is_required
 def mid_trapezius():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('mid_trapezius.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('mid_trapezius.html')
 
 @website.route('/rear_deltoid', methods=['GET', 'POST'])
 @login_is_required
 def rear_deltoid():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('rear_deltoid.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('rear_deltoid.html')
     
 @website.route('/infra_spinatus', methods=['GET', 'POST'])
 @login_is_required
 def infra_spinatus():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('infra_spinatus.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('infra_spinatus.html')
     
 @website.route('/terres_major', methods=['GET', 'POST'])
 @login_is_required
 def terres_major():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('terres_major.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('terres_major.html')
     
 @website.route('/oblique', methods=['GET', 'POST'])
 @login_is_required
 def oblique():
     if request.method == 'POST': # will post when user add workout
-        workout_log = add_workout(request.form)
-        
-        if workout_log == None:
-            flash("Error adding workout.", category='error')
-            return redirect(url_for("website.index"))
-        else:
-            return workout_log
-    else:
-        return render_template('oblique.html')
+        try:
+            add_workout(request.form)
+        except:
+            return redirect(url_for('website.index'))
+    return render_template('oblique.html')
