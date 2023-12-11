@@ -47,6 +47,7 @@
             {% for workout in workouts %}
             <li class="itinerary-item">
                 <h3> {{ workout.exercise }} </h3>
+                <h5> Calories Burned (Per 15 minutes): {{ workout.calories }} </h5>
                 <form method="POST">
                     <input type="hidden" name="workout_id" value="{{ workout.id }}">
                     <div class="delete-button-container">
@@ -56,6 +57,7 @@
             <li>
             {% endfor %}
         </ul>
+    <h5> Total Calories Burned: {{ total_calories }} </h5>
     <div class="back-button-container">
         <a href=" {{ url_for('website.index') }} "><button class='back-button'>Back</button></a>
     </div>

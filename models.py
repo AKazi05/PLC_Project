@@ -7,6 +7,7 @@ DB_NAME = "database.db"
 class Workout(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     exercise = db.Column(db.String(100))
+    calories = db.Column(db.Integer)
     username = db.Column(db.String(256), db.ForeignKey('user.username'))  # references 'username' in 'User' table
     user = db.relationship('User', backref=db.backref('workouts', lazy=True))
     
