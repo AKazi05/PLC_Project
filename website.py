@@ -327,3 +327,8 @@ def oblique():
         except:
             return redirect(url_for('website.index'))
     return render_template('oblique.html')
+    
+@website.route('/mynutrition', methods=['GET', 'POST'])
+@login_is_required
+def mynutrition():
+    return render_template('mynutrition.html')

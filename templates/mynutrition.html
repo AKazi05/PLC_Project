@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Nutrition</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #dff0d8;
+            border: 1px solid #3c763d;
+            color: #3c763d;
+            border-radius: 4px;
+        }
+    </style>
+<script>
+    function calculateNutrition() {
+        // Clear the result box
+        document.getElementById('result').innerHTML = "";
+
+        // Retrieve user inputs
+        var feet = parseFloat(document.getElementById('feet').value);
+        var inches = parseFloat(document.getElementById('inches').value);
+        var weight = parseFloat(document.getElementById('weight').value);
+        var gender = document.getElementById('gender').value;
+        var goal = document.getElementById('goal').value;
+        var age = parseFloat(document.getElementById('age').value);
+
+        // Convert feet and inches to centimeters
+        var height = (feet * 30.48) + (inches * 2.54);
+
+        // Basic BMR calculation (Harris-Benedict Equation) using metric units
+        var bmr;
+        if (gender === 'male') {
+            bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+        } else {
+            bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+        }
+
+        // Caloric intake adjustment based on goal
+        var calorieAdjustment;
+        if (goal === 'lose') {
+            calorieAdjustment = -300; // Deficit for weight loss (300 calories less than maintenance)
+        } else if (goal === 'gain') {
+            calorieAdjustment = 300; // Surplus for weight gain (300 calories more than maintenance)
+        } else {
+            calorieAdjustment = 0; // Maintain current weight
+        }
+
+        // Calculate total daily calories
+        var totalCalories = bmr + calorieAdjustment - 100;
+
+        // Display the result
+        var result = document.getElementById('result');
+        result.innerHTML = "To " + goal + " weight, you should consume approximately " + totalCalories + " calories per day.";
+        result.style.display = "block"; // Make the result visible
+    }
+</script>
+</head>
+<body>
+    <form onsubmit="calculateNutrition(); return false;">
+        <h2>My Nutrition</h2>
+
+        <label for="height">Height:</label>
+        <div style="display: flex;">
+            <input type="number" id="feet" name="feet" placeholder="Feet" required style="flex: 1; margin-right: 10px;">
+            <input type="number" id="inches" name="inches" placeholder="Inches" required style="flex: 1;">
+        </div>
+
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" name="weight" placeholder="Weight (lbs)" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="goal">Weight Goal:</label>
+        <select id="goal" name="goal" required>
+            <option value="lose">Lose Weight</option>
+            <option value="gain">Gain Weight</option>
+            <option value="maintain">Maintain Weight</option>
+        </select>
+
+        <input type="submit" value="Submit">
+
+        <div id="result"></div>
+    </form>
+</body>
+</html>
