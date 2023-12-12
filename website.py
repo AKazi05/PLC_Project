@@ -1,5 +1,6 @@
 from functools import wraps
 from flask import Blueprint, flash, redirect, render_template, request, session, url_for
+from sqlalchemy import func
 from werkzeug.security import generate_password_hash, check_password_hash
 from __init__ import db
 from models import *
@@ -84,20 +85,32 @@ def index():
 
 def add_workout(form):
     exercise = form.get('exercise')
+    calories = form.get('calories_burned')
     user = User.query.filter_by(username=session["username"]).first()
     try:
-        new_workout = Workout(exercise=exercise, username=user.username) # create new workout table for each instance
+        new_workout = Workout(exercise=exercise, calories=calories, username=user.username) # create new workout table for each instance
         db.session.add(new_workout)
         db.session.commit() # save
         flash("Added workout!", category='success')
     except Exception as e:
+        total_calories = 0
         flash("Error adding workout.", category='error')
+    return total_calories
+        
+def get_total_calories(username):
+    user = User.query.filter_by(username=username).first()
+    if user:
+        total_calories = db.session.query(func.sum(Workout.calories)).filter_by(username=username).scalar()
+        return total_calories
+    return 0 
  
 @website.route('/workout', methods=['GET', 'POST'])
 @login_is_required       
 def workout():
     user = User.query.filter_by(username=session["username"]).first()
     workout = Workout.query.filter_by(username=user.username).all() # all workouts linked with this specific username
+    total_calories = 0
+    total_calories = get_total_calories(session["username"])
     if request.method == 'POST': # will post when user presses delete
         workout_id = request.form.get('workout_id') # get the specific workout's id to be deleted
         workout_id_to_delete = Workout.query.get(workout_id)
@@ -110,7 +123,7 @@ def workout():
             db.session.rollback() # return to previous state of DB as failsafe
             flash("Error deleting workout.", category='error')
         return redirect(url_for('website.workout'))
-    return render_template('workout.html', user=user, workouts=workout)
+    return render_template('workout.html', user=user, workouts=workout, total_calories=total_calories)
 
 
 # PAGES     |
