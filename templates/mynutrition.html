@@ -58,6 +58,7 @@
         }
 
         #result {
+            display: none; /* Initially hide the result */
             margin-top: 20px;
             padding: 10px;
             background-color: #dff0d8;
@@ -107,6 +108,23 @@
         var result = document.getElementById('result');
         result.innerHTML = "To " + goal + " weight, you should consume approximately " + totalCalories + " calories per day.";
         result.style.display = "block"; // Make the result visible
+    
+    // Calculate macronutrient distribution based on percentages
+    var carbPercentage = 40; // Adjust these values based on your desired macronutrient distribution
+    var proteinPercentage = 30;
+    var fatPercentage = 30;
+
+    var carbGrams = Math.round((carbPercentage / 100) * totalCalories / 4); // 4 calories per gram of carbohydrates
+    var proteinGrams = Math.round((proteinPercentage / 100) * totalCalories / 4); // 4 calories per gram of protein
+    var fatGrams = Math.round((fatPercentage / 100) * totalCalories / 9); // 9 calories per gram of fat
+
+    result.innerHTML += "<br>Macronutrient Distribution:";
+    result.innerHTML += "<br>Carbohydrates: " + carbGrams + " grams";
+    result.innerHTML += "<br>Protein: " + proteinGrams + " grams";
+    result.innerHTML += "<br>Fat: " + fatGrams + " grams";
+
+    result.style.display = "block"; // Make the result visible
+
     }
 </script>
 </head>
