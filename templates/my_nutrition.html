@@ -59,22 +59,14 @@
             color: #3c763d;
             border-radius: 4px;
         }
-
-        .error-message {
-            display: none;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-            border-radius: 4px;
-        }
-
     </style>
 <script>
     function calculateNutrition() {
         // Clear the result box
         document.getElementById('result').innerHTML = "";
+        document.getElementById('result').style.display = "none";
+        document.getElementById('error').innerHTML = "";
+        document.getElementById('error').style.display = "none";
 
         // Retrieve user inputs
         var feet = parseFloat(document.getElementById('feet').value);
@@ -87,9 +79,11 @@
        
         // Validation checks
         if (feet <= 0 || inches < 0 || inches >= 12 || weight <= 0 || age <= 0) {
-            // Show error message
-            document.getElementById('error-message').style.display = 'block';
-            return; // Stop execution if there's an error
+            document.getElementById('error').innerHTML = "Please enter valid measurements.";
+            document.getElementById('error').style.display = "block";
+            return;
+        } else {
+            document.getElementById('error').style.display = "none";
         }
 
 
@@ -214,6 +208,7 @@
         <input type="submit" value="Submit">
 
         <div id="result"></div>
+        <div id="error" ></div>
     </form>
 </body>
 </html>
