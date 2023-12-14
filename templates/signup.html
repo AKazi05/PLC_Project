@@ -40,7 +40,8 @@
     </nav>
     <h1>
         Anatomical Fitness
-        <br>Sign Up
+        <br>
+        Sign Up
     </h1>
 
     <form method="POST">
@@ -49,6 +50,9 @@
   
       <label for="password">Password:</label><br>
       <input type="password" id="password" name="password"><br><br>
+
+      <label for="password">Your Key Phrase:</label><br>
+      <input type="password" id="key_phrase" name="key_phrase"><br><br>
   
       <button>Sign Up</button>
       <a href=" {{ url_for('website.login') }} "><button type="button">Have an account? Log In</button></a>

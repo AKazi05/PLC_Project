@@ -1,4 +1,5 @@
 from functools import wraps
+import secrets
 from flask import Blueprint, flash, redirect, render_template, request, session, url_for
 from sqlalchemy import func
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -23,6 +24,7 @@ def signup():
         if 'username' in form:
             username = form.get('username')
             password = form.get('password')  
+            key_phrase = form.get('key_phrase') 
             
             user = User.query.filter_by(username=username).first() # filter by first username, just in case
             if user:
@@ -35,7 +37,7 @@ def signup():
                 flash('Password must be at least 5 characters.', category='error')
                 return render_template('signup.html')
             else:
-                new_user = User(username=username, password=generate_password_hash(password, method='scrypt'))
+                new_user = User(username=username, password=generate_password_hash(password, method='scrypt'), key_phrase=key_phrase)
                 try:
                     db.session.add(new_user)
                     db.session.commit()
@@ -60,7 +62,6 @@ def login():
                 if check_password_hash(user.password, password): # is user input matches PW in DB, let them login
                     session['logged_in'] = True
                     session['username'] = username
-                    session['password'] = password
                     return redirect(url_for('website.index'))
                 else:
                     flash('Incorrect password. Hint: passwords are greater than 5 characters.', category='error')
@@ -82,6 +83,45 @@ def logout():
 @login_is_required
 def index():
     return render_template('index.html')
+
+@website.route('/forgot', methods=['GET', 'POST'])
+def forgot():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        key_phrase = request.form.get('key_phrase')
+        user = User.query.filter_by(username=username).first()
+        
+        if user:
+            if key_phrase == user.key_phrase:
+                token = secrets.token_urlsafe(16)
+                user.token = token
+                db.session.commit()
+                return redirect(url_for('website.reset', username=username, token=token))
+            else: 
+                flash('Incorrect key phrase.', category='error')
+        else:
+            flash('Username not found. Please try again.', category='error')
+    return render_template('forgot.html')
+
+@website.route('/reset/<username>/<token>', methods=['GET', 'POST'])
+def reset(username, token):
+    user = User.query.filter_by(username=username, token=token).first()
+    if not user:
+        return redirect(url_for('website.login'))
+
+    if request.method == 'POST':
+        new_password = request.form.get('password')
+        if len(new_password) < 6:
+            flash('Password must be at least 5 characters.', category='error')
+        elif check_password_hash(user.password, new_password):
+            flash('Password cannot be the same as previous password.', category='error')            
+        else:
+            flash('Password reset!', category='success')
+            user.password = generate_password_hash(new_password, method='scrypt')
+            user.token = None
+            db.session.commit()
+            return redirect(url_for('website.login'),)
+    return render_template('reset.html')
 
 def add_workout(form):
     exercise = form.get('exercise')
