@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/my_nutrition.css">
+    <link rel="stylesheet" href="../static/sidebar.css">
     <title>My Nutrition</title>
     <style>
         body {
@@ -58,6 +59,17 @@
             color: #3c763d;
             border-radius: 4px;
         }
+
+        .error-message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            border-radius: 4px;
+        }
+
     </style>
 <script>
     function calculateNutrition() {
@@ -75,11 +87,12 @@
        
         // Validation checks
         if (feet <= 0 || inches < 0 || inches >= 12 || weight <= 0 || age <= 0) {
-            // Display error message for invalid inputs
-            document.getElementById('result').innerHTML = "Please enter valid measurements";
-            document.getElementById('result').style.display = "block";
-            return; // Stop further execution
+            // Show error message
+            document.getElementById('error-message').style.display = 'block';
+            return; // Stop execution if there's an error
         }
+
+
         // Convert feet and inches to centimeters
         var height = (feet * 30.48) + (inches * 2.54);
         var weight = parseFloat(document.getElementById('weight').value);
@@ -154,6 +167,13 @@
 </script>
 </head>
 <body>
+    <div class="sidebar">
+        <a href=" {{ url_for('website.index') }} ">Home</a>
+        <a href=" {{ url_for('website.workout') }} ">My Workouts</a>
+        <a href=" {{ url_for('website.my_nutrition') }} ">My Nutrition</a>
+        <a href=" {{ url_for('website.logout') }} ">Logout</a>
+    </div>
+
     <form onsubmit="calculateNutrition(); return false;">
         <h2>My Nutrition</h2>
 

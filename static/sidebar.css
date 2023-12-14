@@ -10,7 +10,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #FFFFFF;
+    background-color: transparent;
     color: black;
     padding-top: 20px;
 }
