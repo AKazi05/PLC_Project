@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/my_nutrition.css">
     <title>My Nutrition</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
@@ -45,18 +49,6 @@
             border-radius: 4px;
         }
 
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: #fff;
-            cursor: pointer;
-            outline: none;
-
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
         #result {
             display: none; /* Initially hide the result */
             margin-top: 20px;
@@ -79,7 +71,15 @@
         var gender = document.getElementById('gender').value;
         var goal = document.getElementById('goal').value;
         var age = parseFloat(document.getElementById('age').value);
-
+        var activity = document.getElementById('activity').value;
+       
+        // Validation checks
+        if (feet <= 0 || inches < 0 || inches >= 12 || weight <= 0 || age <= 0) {
+            // Display error message for invalid inputs
+            document.getElementById('result').innerHTML = "Please enter valid measurements";
+            document.getElementById('result').style.display = "block";
+            return; // Stop further execution
+        }
         // Convert feet and inches to centimeters
         var height = (feet * 30.48) + (inches * 2.54);
         var weight = parseFloat(document.getElementById('weight').value);
@@ -93,7 +93,6 @@
             bmr = 10 * weight + 6.25 * height - 5 * age - 161;
         }
 
-        var activity = document.getElementById('activity').value;
         switch (activity) {
             case 'sedentary':
                 activityFactor = 1.2;

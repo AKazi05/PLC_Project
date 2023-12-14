@@ -1,0 +1,16 @@
+html {
+    font-family:'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.35s, opacity 0.35s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+    opacity: 0.8;
+}
