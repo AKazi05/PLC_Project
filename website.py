@@ -93,9 +93,7 @@ def add_workout(form):
         db.session.commit() # save
         flash("Added workout!", category='success')
     except Exception as e:
-        total_calories = 0
         flash("Error adding workout.", category='error')
-    return total_calories
         
 def get_total_calories(username):
     user = User.query.filter_by(username=username).first()
