@@ -125,6 +125,10 @@ def workout():
         return redirect(url_for('website.workout'))
     return render_template('workout.html', user=user, workouts=workout, total_calories=total_calories)
 
+@website.route('/mynutrition', methods=['GET', 'POST'])
+@login_is_required
+def my_nutrition():
+    return render_template('my_nutrition.html')
 
 # PAGES     |
 # FOR       |
@@ -340,8 +344,3 @@ def oblique():
         except:
             return redirect(url_for('website.index'))
     return render_template('oblique.html')
-    
-@website.route('/mynutrition', methods=['GET', 'POST'])
-@login_is_required
-def mynutrition():
-    return render_template('mynutrition.html')
