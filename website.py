@@ -37,7 +37,7 @@ def signup():
                 flash('Password must be at least 5 characters.', category='error')
                 return render_template('signup.html')
             else:
-                new_user = User(username=username, password=generate_password_hash(password, method='scrypt'), key_phrase=key_phrase)
+                new_user = User(username=username, password=generate_password_hash(password, method='scrypt'), key_phrase=generate_password_hash(key_phrase, method='scrypt'))
                 try:
                     db.session.add(new_user)
                     db.session.commit()
@@ -89,11 +89,11 @@ def forgot():
     if request.method == 'POST':
         username = request.form.get('username')
         key_phrase = request.form.get('key_phrase')
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(username=username).first() # filter by first username, just in case
         
         if user:
-            if key_phrase == user.key_phrase:
-                token = secrets.token_urlsafe(16)
+            if check_password_hash(user.key_phrase, key_phrase): # check user input with hash on db
+                token = secrets.token_urlsafe(16) # generate url safe token
                 user.token = token
                 db.session.commit()
                 return redirect(url_for('website.reset', username=username, token=token))
